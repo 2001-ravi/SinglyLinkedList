@@ -17,9 +17,7 @@ public:
     Employee(Employee&&) = delete;
     Employee& operator=(const Employee&) = delete;
     Employee&& operator=(Employee&&) = delete;
-    ~Employee() {
-        std::cout<<"in emp ~\n";
-    }
+    ~Employee() = default;   
 
     Employee(int id,std::string name){
         _empId = id;

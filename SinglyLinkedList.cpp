@@ -9,11 +9,18 @@ SinglyLinkedList<T>::~SinglyLinkedList()
 {
     // delete _root; //no need to delete for _root as we are deleting the last element in 
                     //pop_back function
-    delete _end;
+    
+    while (_root!=nullptr)
+    {
+        Node<T> * temp = _root;
+        _root = _root->next();
+        delete temp;
+    }
+    
 }
 
 template <typename T>
-void SinglyLinkedList<T>::push_back(const T& ele)
+void SinglyLinkedList<T>::push_back(T&& ele)
 {
     if(_root == nullptr)
     {
@@ -188,7 +195,7 @@ bool SinglyLinkedList<T>::Iterator::operator==(const SinglyLinkedList<T>::Iterat
 
 //de-reference operator overload
 template <typename T>
-T  SinglyLinkedList<T>::Iterator::operator*()
+T SinglyLinkedList<T>::Iterator::operator*()
 {
     return this->_ptr->ele();
 }
