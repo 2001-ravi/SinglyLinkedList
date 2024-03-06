@@ -1,3 +1,9 @@
+/*
+    compile only Main.cpp file no need to compile other cpp files as they are included in .h files ,
+    they will get auto compiled
+*/
+
+
 #include<iostream>
 #include"SinglyLinkedList.h"
 #include<list>
